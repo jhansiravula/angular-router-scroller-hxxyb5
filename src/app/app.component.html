@@ -1,0 +1,30 @@
+
+<nav style="position: fixed; top:0; left:0; padding: 20px; background: yellow; width: 100%">
+  <a [routerLink]="['page1']">
+    Page1
+  </a>
+  <span style="display: inline-block; width: 20px;"></span> 
+  <a [routerLink]="['page2']">
+    Page2
+  </a>
+  <span style="display: inline-block; width: 20px;"></span> 
+   <a [routerLink]="['page1']" [fragment]="'item15'">
+      Page1#item15
+  </a>
+  <span style="display: inline-block; width: 20px;"></span> 
+  <button mat-button (click)="locationBack()">Location Back</button>
+  <span style="display: inline-block; width: 20px;"></span> 
+  <button mat-button (click)="locationBackAngular()">Location Back (Angular)</button>
+</nav>
+
+<br><br><br>
+<hello name="{{ name }}"></hello>
+<p>
+  Router Scroller introduced, let's play! :)
+</p>
+<h2 style="color: red">WARNING!</h2>
+<p style="color: red">
+  For dynamicaly generated(loaded..?) content you need to hack this scrolling feature to make it work as expected. see app.component.ts for more details.
+  EDIT: I have found other solutions for this problem directly in <a href="https://angular.io/api/router/ExtraOptions#properties">docs</a> at section "scrollPositionRestoration". <b>Much better using observables.</b>
+</p>
+<router-outlet></router-outlet>
